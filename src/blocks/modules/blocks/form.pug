@@ -1,0 +1,88 @@
+section(id="target-order" class="info")
+    div(class="info__bg bg-cover")
+        img(src="img/info-bg.png")
+    div(class="container")
+        div(class="info-top")
+            h2 Оформление  <span>Заказа</span>
+            p Перед заполнением формы ознакомьтесь с нашей схемой работы!
+        div(class="info-steps")
+            div(class="info-steps__center")
+                span(class="info-steps__points")
+                    svg
+                        use(xlink:href="img/sprites/sprite.svg#points")
+                div(class="info-step")
+                    div(class="info-step__circle")
+                        svg
+                            use(xlink:href="img/sprites/sprite.svg#step-circle")
+                        span(class="info-step__icon")
+                            svg
+                                use(xlink:href="img/sprites/sprite.svg#step-1")
+                    p(class="info-step__text") Lorem ipsum dolor sit amet
+                div(class="info-step")
+                    div(class="info-step__circle")
+                        svg
+                            use(xlink:href="img/sprites/sprite.svg#step-circle")
+                        span(class="info-step__icon")
+                            svg
+                                use(xlink:href="img/sprites/sprite.svg#step-2")
+                    p(class="info-step__text") Сonsecteturadipiscing elit
+                div(class="info-step")
+                    div(class="info-step__circle")
+                        svg
+                            use(xlink:href="img/sprites/sprite.svg#step-circle")
+                        span(class="info-step__icon")
+                            svg
+                                use(xlink:href="img/sprites/sprite.svg#step-3")
+                    p(class="info-step__text") Sed do eiusmod tempor
+                div(class="info-step")
+                    div(class="info-step__circle")
+                        svg
+                            use(xlink:href="img/sprites/sprite.svg#step-circle")
+                        span(class="info-step__icon")
+                            svg
+                                use(xlink:href="img/sprites/sprite.svg#step-4")
+                    p(class="info-step__text") Esse cillum dolore eu fugiat
+                div(class="info-step")
+                    div(class="info-step__circle")
+                        svg
+                            use(xlink:href="img/sprites/sprite.svg#step-circle")
+                        span(class="info-step__icon")
+                            svg
+                                use(xlink:href="img/sprites/sprite.svg#step-5")
+                    p(class="info-step__text") Excepteur sint occaecat cupidatat non proident
+        form(action="/" method="post" class="info-form")
+            div(class="info-form__column form__column--inputs")
+                div(class="nice-select__wrap")
+                    select(id="nice-select")
+                        option Sed ut perspiciatis
+                        option Nemo enim ipsam
+                        option Et harum quidem
+                        option Temporibus autem
+                        option Itaque earum rerum
+                        option Sed ut perspiciatis
+                        option Nemo enim ipsam
+                        option Et harum quidem
+                        option Temporibus autem
+                        option Itaque earum rerum
+            div(class="info-form__column form__column--inputs")
+                input(type="email" class="form-input" name="email" placeholder="Ваш e-mail")
+            div(class="info-form__column form__column--inputs")
+                input(type="text" class="form-input" name="name" placeholder="Ваше имя")
+            div(class="info-form__column form__column--slider")
+                div(class="info-slider")
+                    div(class="info-slider__top")
+                        p Sed ut perspiciatis, unde omnis iste natus
+                        span(class="info-slider__percent") <span id="ui-slider-percent" class="js-slider-percent">75</span> %
+                    div(class="info-slider__wrap")
+                        div(id="ui-slider" class="js-slider")
+            div(class="info-form__column form__column--inputs")
+                div(class="file")
+                    input(type="file" id="fileUpload" name="file")
+                    label(for="fileUpload" class="file-wrap")
+                        span(class="file__icon")
+                            svg
+                                use(xlink:href="img/sprites/sprite.svg#file")
+                        span Прикрепить файл
+            div(class="info-form__column form__column--button")
+                button(class="btn btn--blue btn--big")
+                    span Отправить

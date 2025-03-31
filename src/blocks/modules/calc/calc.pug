@@ -1,0 +1,80 @@
+div(class="container")
+    div(class="calc")
+        div(class="calc-overflow")
+            form(action="/" method="post" class="calc-form" name="formData")
+                div(class="calc-wrap js-calc-wrap")
+                    div(class="calc-wrap__step" data-step="1")
+                        div(class="calc-buttons")
+                            button(type="button" class="calc-button js-calc-result-btn")
+                                span Рассчитайте платеж
+                        div(class="calc-rows")
+                            div(class="calc-col calc-col--form1")
+                                div(class="calc-form__rows")
+                                    div(class="calc-form__col")
+                                        div(class="calc-form__input")
+                                            input(type="text" id="calc1" class="calc-form__control js-focus js-cookie js-calc-input js-calc-val1 js-input-val1" name="calc1" placeholder="")
+                                            label(class="calc-form__label" for="calc1")
+                                                span Сумма займа
+                                    div(class="calc-form__col")
+                                        div(class="calc-form__input")
+                                            input(type="text" id="calc2" class="calc-form__control js-focus js-cookie js-calc-input js-calc-val2 js-input-val1" name="calc2" placeholder="")
+                                            label(class="calc-form__label" for="calc2")
+                                                span Первоначальный взнос
+                                    div(class="calc-form__col")
+                                        div(class="calc-form__input")
+                                            input(type="text" id="calc3" class="calc-form__control js-focus js-cookie js-calc-input js-calc-val3 js-input-val2" name="calc3" placeholder="")
+                                            label(class="calc-form__label" for="calc3")
+                                                span Процентная ставка
+                                    div(class="calc-form__col")
+                                        div(class="calc-form__input")
+                                            input(type="text" id="calc4" class="calc-form__control js-focus js-cookie js-calc-input js-calc-val4 js-input-val1" name="calc4" placeholder="")
+                                            label(class="calc-form__label" for="calc4")
+                                                span Срок кредитования
+                            div(class="calc-col calc-col--result")
+                                div(class="calc-result")
+                                    div(class="calc-result__inner")
+                                        input(type="hidden" name="calc5" id="cal5" class="js-calc-result-hidden js-cookie-hidden")
+                                        span(class="calc-result__label") Ежемесячный платеж
+                                        span(class="calc-result__val") <span class="js-calc-result">0</span> ₽
+                            div(class="calc-col")
+                                button(type="button" class="calc-form__button js-calc-button" disabled="disabled")
+                                    span Оставить заявку
+                    div(class="calc-wrap__step" data-step="2")
+                        div(class="calc-buttons")
+                            button(type="button" class="calc-button calc-button--icon js-calc-back")
+                                span
+                                    svg
+                                        use(xlink:href="img/sprites/sprite.svg#back")
+                            button(type="button" class="calc-button")
+                                span Оставьте заявку
+                        div(class="calc-rows")
+                            div(class="calc-col calc-col--form2")
+                                div(class="calc-form__rows")
+                                    div(class="calc-form__col")
+                                        div(class="calc-form__input")
+                                            input(type="text" id="data1" class="calc-form__control js-focus js-cookie js-form-data1" name="data1" placeholder="")
+                                            label(class="calc-form__label" for="data1")
+                                                span Фамилия
+                                    div(class="calc-form__col")
+                                        div(class="calc-form__input")
+                                            input(type="text" id="data2" class="calc-form__control js-focus js-cookie js-form-data2" name="data2" placeholder="")
+                                            label(class="calc-form__label" for="data2")
+                                                span Имя
+                                    div(class="calc-form__col")
+                                        div(class="calc-form__input")
+                                            input(type="text" id="data3" class="calc-form__control js-focus js-cookie" name="data3" placeholder="")
+                                            label(class="calc-form__label" for="data3")
+                                                span Отчество
+                                    div(class="calc-form__col")
+                                        div(class="calc-form__input")
+                                            input(type="text" id="data4" class="calc-form__control js-focus js-cookie js-mask-phone js-form-data-phone" name="data4" placeholder="")
+                                            label(class="calc-form__label" for="data4")
+                                                span Телефон
+                                    div(class="calc-form__col")
+                                        div(class="calc-form__input")
+                                            input(type="text" id="data5" class="calc-form__control js-focus js-cookie js-mask-email js-form-data-email" name="data5" placeholder="")
+                                            label(class="calc-form__label" for="data5")
+                                                span E-mail
+                            div(class="calc-col")
+                                button(class="calc-form__button")
+                                    span Отправить

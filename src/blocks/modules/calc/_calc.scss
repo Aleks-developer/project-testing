@@ -1,0 +1,370 @@
+.calc {
+  background-color: #FFFFFF;
+  border-radius: 64px;
+  padding: 40px;
+
+  &-overflow {
+    overflow: hidden;
+  }
+
+  &-wrap {
+    position: relative;
+    left: 0;
+    overflow: hidden;
+    display: flex;
+    width: 200%;
+    transition: all 0.15s ease-in-out;
+
+    &.is-active {
+      left: -100%;
+    }
+
+    &__step {
+      width: 50%;
+      flex-shrink: 0;
+    }
+  }
+
+  &-buttons {
+    display: flex;
+    margin-bottom: 24px;
+
+    & > * {
+      &:not(:last-child) {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  &-button {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    background-color: transparent;
+    border: 3px solid #EFEFF3;
+    border-radius: 100px;
+    font-weight: 800;
+    color: #6D6F92;
+    padding: 14.5px 29px;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+    }
+
+    &:not([class*="--icon"]) {
+      line-height: 16px;
+    }
+
+    &[class*="--icon"] {
+      font-size: 0;
+      line-height: 1;
+
+      svg {
+        width: 22px;
+        height: 16px;
+
+        use {
+          fill: none;
+          stroke: #6D6F92;
+          stroke-width: 3px;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          transition: all 0.15s ease-in-out;
+        }
+      }
+    }
+
+    &:hover {
+      border-color: #BA97FF;
+      color: #9A67FF;
+
+      svg {
+        use {
+          stroke: #9A67FF;
+        }
+      }
+    }
+  }
+
+  &-rows {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -16px -8px 0;
+  }
+
+  &-col {
+    flex-shrink: 0;
+    margin-top: 16px;
+    padding: 0 8px;
+
+    &[class*="--form1"] {
+      width: 66.666667%;
+
+      & [class*="__col"] {
+        width: 50%;
+      }
+    }
+
+    &[class*="--result"] {
+      width: 33.333333%;
+    }
+
+    &[class*="--form2"] {
+      width: 100%;
+
+      & [class*="__col"] {
+        width: 33.333333%;
+      }
+    }
+
+    &:last-child {
+      width: 100%;
+    }
+  }
+
+  &-result {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border: 3px solid #9A67FF;
+    border-radius: 48px;
+    font-weight: 800;
+    padding: 22.5px 45px;
+
+    &__label {
+      display: block;
+      line-height: 19.2px;
+      color: #27284A;
+      margin-bottom: 8px;
+    }
+
+    &__val {
+      display: inline-block;
+      font-size: 32px;
+      line-height: 38.4px;
+      color: #9A67FF;
+    }
+  }
+
+  &-form {
+    &__rows {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -16px -8px 0;
+    }
+
+    &__col {
+      margin-top: 16px;
+      padding: 0 8px;
+    }
+
+    &__button {
+      position: relative;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      height: 64px;
+      background-color: #9A67FF;
+      border: 0 none;
+      border-radius: 100px;
+      font-weight: 800;
+      color: #FFFFFF;
+      padding: 16px 32px;
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+      }
+
+      &:hover {
+        box-shadow: 0 0 25px 0 #FFFFFF inset;
+      }
+
+      &[disabled] {
+        cursor: not-allowed;
+      }
+    }
+
+    &__input {
+      position: relative;
+    }
+
+    &__label {
+      position: absolute;
+      left: 24px;
+      top: 22.5px;
+      z-index: 1;
+      font-weight: 400;
+      line-height: 19.2px;
+      color: #27284A;
+      opacity: 50%;
+      cursor: text;
+      transition: all 0.15s ease-in-out;
+
+      span {
+        display: inline-block;
+        vertical-align: top;
+      }
+    }
+
+    &__control {
+      display: block;
+      width: 100%;
+      height: 64px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 19.2px;
+      text-align: left;
+      border: 0 none;
+      background-color: #EFEFF3;
+      border-radius: 100px;
+      background-clip: padding-box;
+      -webkit-appearance: none;
+      padding: 12px 24px;
+      transition: all 0.15s ease-in-out;
+
+      &:focus {
+        outline: 0;
+      }
+
+      &:focus,
+      &.is-focus {
+        & ~ .calc-form {
+          &__label {
+            top: 8px;
+            font-size: 10px;
+            line-height: 12px;
+            color: #9A67FF;
+            opacity: 100%;
+          }
+        }
+      }
+
+      &.just-validate-error-field {
+        & ~ .calc-form {
+          &__label {
+            color: #FF6767;
+          }
+        }
+      }
+
+      & ~ .just-validate-error-label {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: (1279px)) {
+  .calc {
+    &-col {
+      &[class*="--form1"] {
+        width: 100%;
+      }
+
+      &[class*="--result"] {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: (767px)) {
+  .container {
+    padding: 32px 16px;
+  }
+
+  .calc {
+    border-radius: 48px;
+    padding: 40px 32px;
+
+    &-buttons {
+      & > * {
+        &:not(:last-child) {
+          margin-right: 8px;
+        }
+      }
+    }
+
+    &-button {
+      height: 44px;
+      padding: 10.5px 21px;
+
+      &:not([class*="--icon"]) {
+        font-size: 12px;
+        line-height: 12px;
+      }
+
+      &[class*="--icon"] {
+        svg {
+          width: 17px;
+          height: 12px;
+
+          use {
+            stroke-width: 2px;
+          }
+        }
+      }
+    }
+
+    &-result {
+      border-radius: 32px;
+      padding: 29px;
+
+      &__label {
+        font-size: 14px;
+        line-height: 16.8px;
+      }
+
+      &__val {
+        font-size: 24px;
+        line-height: 28.8px;
+      }
+    }
+
+    &-col {
+      &:last-child {
+        margin-top: 24px;
+      }
+
+      &[class*="--form1"] {
+        & [class*="__col"] {
+          width: 100%;
+        }
+      }
+
+      &[class*="--form2"] {
+        & [class*="__col"] {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: (479px)) {
+  .calc {
+    &-form {
+      &__button {
+        width: 100%;
+      }
+    }
+  }
+}
